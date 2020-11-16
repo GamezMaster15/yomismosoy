@@ -1,0 +1,102 @@
+<div class="site-wrap">
+    <div class="intro-section" id="home-section">
+        <div class="slide-1" data-stellar-background-ratio="0.5" style="background-image: url('images/hero_1.jpg');">
+            {{#if links}}
+            <div class="container" data-aos="fade-up" data-aos-delay="500">
+                <div class="row align-items-center">
+                    <div class="col-12" style="margin-top: 100px;">
+                        <div class="row align-items-center mt-3">
+                            <div class="col-lg-12">
+                                <div class="row mb-5">
+                                    <div class="col-12 ml-1">
+                                        <form action="/search" class="row mx-auto" method="POST">
+                                            <div class="col-2 mr-0 pr-0">
+                                                <select class="form-control bg-transparent text-white" name="select" style="font-family:Bebas Neue, cursive;border: none;border-top: 1px solid rgba(255,255,255,0.5);border-left: 1px solid rgba(255,255,255,0.5);border-bottom: 1px solid rgba(255,255,255,0.5); border-radius: 0px;">
+                                                    <option class="text-dark" value="todos">
+                                                        Todos
+                                                    </option>
+                                                    <option class="text-dark" value="bebida espirituosa">
+                                                        Bebidas Espirituosas
+                                                    </option>
+                                                    <option class="text-dark" value="combos">
+                                                        Combos
+                                                    </option>
+                                                    <option class="text-dark" value="ron">
+                                                        Ron
+                                                    </option>
+                                                    <option class="text-dark" value="ron añejo">
+                                                        Ron Añejo
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div class="col-9 mr-0 pr-0 pl-0">
+                                                <input class="form-control text-uppercase bg-transparent text-white" name="search" placeholder="Buscar en yo mismo soy" style="font-family:Bebas Neue, cursive;border: none;border-top: 1px solid rgba(255,255,255,0.5);border-bottom: 1px solid rgba(255,255,255,0.5); border-radius: 0px;" type="text">
+                                                </input>
+                                            </div>
+                                            <div class="col-1 ml-0 pl-0">
+                                                <button class="btn text-uppercase bg-transparent text-white" style="font-family:Bebas Neue, cursive;border: none;border-right: 1px solid rgba(255,255,255,0.5);
+                                border-top: 1px solid rgba(255,255,255,0.5);border-bottom: 1px solid rgba(255,255,255,0.5);border-radius: 0px;border-bottom-right-radius: 5px;border-top-right-radius: 5px;background: rgba(255,255,255,0.3);" type="submit">
+                                                    <i class="fa fa-search">
+                                                    </i>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    {{#each links}}
+                                    <div class="col-lg-3 col-12 mb-4">
+                                        <form action="/buy" class="row rounded border m-1" method="POST" style="background: #f0f0f0;">
+                                            <div class="col-12 mt-3 positio-relative">
+                                                <div class="position-absolute text-right">
+                                                    <spam class="text-success text-right border rounded p-2 pl-2 pr-2 my-auto border-success" style="font-size: 28px;font-family: Bebas Neue, cursive;">
+                                                        ${{precioNum}}.00
+                                                    </spam>
+                                                </div>
+                                                <img src="/images/{{imagen}}" width="100%">
+                                                </img>
+                                            </div>
+                                            <div class="col-12">
+                                                <p class="text-dark text-uppercase text-center mb-0" style="font-family: Bebas Neue, cursive;font-size: 20px;">
+                                                    {{title}}
+                                                </p>
+                                                <p class="text-center" style="font-family: Bebas Neue, cursiva;color: #929191;">
+                                                    {{categoria}}
+                                                </p>
+                                            </div>
+                                            <input class="d-none" name="title" type="text" value="{{title}}" />
+                                            <input class="d-none" name="precioNum" type="text" value="{{precioNum}}" />
+                                            <div class="col-6">
+                                                <button class="btn btn-success text-white mb-3">
+                                                Comprar
+                                                </button>
+                                            </div>
+                                            <div class="col-5 offset-1">
+                                                <input class="form-control" name="cantidad" type="number" value="1"/>
+                                            </div>     
+                                        </form>
+                                    </div>
+                                    {{/each}}                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{else}}
+                <div class="container" data-aos="fade-up" data-aos-delay="500">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <h3 class="text-center" style="font-family: Bebas Neue, cursiva;">
+                                Top CUrda cerrado por hoy
+                                <br/>
+                                Recuerda hacer tus compras antes de las 11:30pm
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+</div>
